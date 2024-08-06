@@ -1,0 +1,36 @@
+{
+  "name": "mfe-vite-electron",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "electron": "electron .",
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:3000 && electron .\"",
+    "package": "electron-builder"
+  },
+  "build": {
+    "appId": "com.example.app",
+    "productName": "My Vite React Electron App",
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "dependencies": {
+    "react": "^latest",
+    "react-dom": "^latest"
+  },
+  "devDependencies": {
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1"
+  }
+}
